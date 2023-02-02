@@ -26,6 +26,14 @@ function showNct() {
   document.getElementById("noside").style.display = "none";
   document.getElementById("nct").style.display = "block";
 }
+function showYesside2n() {
+  document.getElementById("nct").style.display = "none";
+  document.getElementById("yesside2").style.display = "block";
+}
+function showNoside2n() {
+  document.getElementById("nct").style.display = "none";
+  document.getElementById("noside2").style.display = "block";
+}
 function showYesside() {
   document.getElementById("ctcal").style.display = "none";
   document.getElementById("yesside").style.display = "block";
