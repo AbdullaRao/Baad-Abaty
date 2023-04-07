@@ -1,228 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Renal Cyst Classification Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-
-    
-    <div class="top">
-      <h1>Bosniak Classification of Cystic Renal Masses</h1>
-      <h3>Version 2019 - Calculator</h3>
-    </div>
-    
-    <div class="box">  
-      
-      <br>
-
-      <div>
-        <div id="start" class="question">
-          <p>What are you using to evalute the renal mass?</p>
-          <button onclick="showCtcal()">CT</button><br>
-          <br><button onclick="showMrical()">MRI</button><br>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="breadstyle.css">
+    <title>Baad Abaty</title>
+    <link rel="icon" type="image/x-icon" href="logo1.png">
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="logo1.png" alt="logo"></div>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="rightNav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
         </div>
-        
-        <!--From here there is the portion of CT-->
+    </nav>
 
-        <div id="ctcal" class="question" style="display:none;">
-          <p>Renal Mass Protocal CT and <25% enhancing tissue and no macroscopic fat</p>
-          <button onclick="showYesside()">Yes</button><br>
-          <br><button onclick="showNoside()">No</button><br>
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firsthalf">
+                <p class="text-big">Welcome to the Baad Abaty,</p>
+                <p class="text-small">Here you'll find all your favorite sweetes and Dairy Products.</p>
+                <div class="button">
+                    <button class="btn vs">Taste Now!!</button>
+                </div>
+            
+            </div>
+
+            <div class="secondhalf">
+                <p></p>
+                <img src="sppd.jpg" alt="Bread Image" height="400" width="400">
+            </div>
+
         </div>
-        
-        <!--No side-->
-        
-        <div id="noside" class="question" style="display:none;">
-          <p>If No, then_______?</p>
-          <button onclick="showEtomf()">≥25% enhancing tissue or macroscopic fat</button><br>
-          <br><button onclick="showPvpct()">Portal venous phase CT</button><br>
-          <br><button onclick="showNct()">Noncontrast CT</button><br>
-        </div>
+    </section>
 
-        <div id="etomf" class="question" style="display:none;">
-          <p id="black">Solid mass <br> <span id="nonbold">Bosniak classification not applicable</span></p>
-        </div>
-        
-        <div id="pvpct" class="question" style="display:none;">
-          <p>Homogeneous and 21-30 HU <br> -or- <br> Homogeneous, low attenuation, too small to characterize</p>
-          <button onclick="showYesside2()">Yes</button><br>
-          <br><button onclick="showNoside2()">No</button><br>
-        </div>
-        
-        <div id="nct" class="question" style="display:none;">
-          <p>Homogeneous and 270 HU or -9 to 20 HU <br> -or- <br> Homogeneous, low attenuation, too small to characterize</p>
-          <button onclick="showYesside2n()">Yes</button><br>
-          <br><button onclick="showNoside2n()">No</button><br>
-        </div>
-
-        <div id="yesside2" class="question" style="display:none;">
-          <p id="yellow">Bosniak II <br> <span id="nonbold">No follow-up</span></p>
-        </div>
-
-        <div id="noside2" class="question" style="display:none;">
-          <p id="black">Not classified <br> <span id="nonbold">Renal mass CT or MRI recommended</span></p>
-        </div>
-
-        <!--Yes side-->
-
-        <div id="yesside" class="question" style="display:none;">
-          <p>Any one of: Heterogeneous non- enhancing Hyperattenuating >3 cm Abundant calcification</p>
-          <button onclick="showYesside3()">Yes</button><br>
-          <br><button onclick="showNoside3()">No</button><br>
-        </div>
-
-        <div id="yesside3" class="question" style="display:none;">
-          <p id="black">Not classified <br> <span id="nonbold">Renal mass MRI recommended</span></p>
-        </div>
-
-        <div id="noside3" class="question" style="display:none;">
-          <p>Nodule(s) Convex obtuse margin: ≥4 mm Convex acute margin: Any size</p>
-          <button onclick="showYesside4()">Yes</button><br>
-          <br><button onclick="showNoside4()">No</button><br>
-        </div>
-
-        <div id="yesside4" class="question" style="display:none;">
-          <p id="">Bosniak IV <br> <span id="nonbold">Urology consult</span></p>
-        </div>
-
-        <div id="noside4" class="question" style="display:none;">
-          <p>Irregular or thick walls or septa Thick: ≥4 mm Convex obtuse margin: ≤3 mm</p>
-          <button onclick="showYesside5()">Yes</button><br>
-          <br><button onclick="showNoside5()">No</button><br>
-        </div>
-
-        <div id="yesside5" class="question" style="display:none;">
-          <p id="">Bosniak III <br> <span id="nonbold">Urology consult</span></p>
-        </div>
-
-        <div id="noside5" class="question" style="display:none;">
-          <p>Minimally thick walls or septa Minimally thick: 3 mm -and/or- Many smooth thin septa Many: ≥4, Thin: ≤2 mm</p>
-          <button onclick="showYesside6()">Yes</button><br>
-          <br><button onclick="showNoside6()">No</button><br>
-        </div>
-
-        <div id="yesside6" class="question" style="display:none;">
-          <p id="">Bosniak IIF <br> <span id="nonbold">Reimage qбmo x 2 then q1yr x 4 for a total of 5 yrs</span></p>
-        </div>
-
-        <div id="noside6" class="question" style="display:none;">
-          <p>Few thin septa Few: ≤3, Thin: ≤2 mm -or- Homogeneous nonenhancing >20HU*</p>
-          <button onclick="showYesside7()">Yes</button><br>
-          <br><button onclick="showNoside7()">No</button><br>
-        </div>
-
-        <div id="yesside7" class="question" style="display:none;">
-          <p id="">Bosniak II <br> <span id="nonbold">No follow-up</span></p>
-        </div>
-
-        <div id="noside7" class="question" style="display:none;">
-          <p>Simple cyst Thin smooth wall Homogeneous Simple fluid (-9 to 20 HU) No septa or calcifications</p>
-          <br><button onclick="showYesside8()">Yes</button><br>
-        </div>
-
-        <div id="yesside8" class="question" style="display:none;">
-          <p id="">Bosniak I <br> <span id="nonbold">No follow-up</span></p>
-        </div>
-
-        <!-- From here there is the portion of MRI-->
-
-        <div id="mrical" class="question" style="display:none;">
-          <p>Renal Mass Protocal MRI and <25% enhancing tissue and no macroscopic fat</p>
-          <button onclick="showYessidea1()">Yes</button><br>
-          <br><button onclick="showNosidea1()">No</button><br>
-        </div>
-
-         <!--No side-->
-        
-        <div id="nosidea1" class="question" style="display:none;">
-          <p>If No, then_______?</p>
-          <button onclick="showEtomfe()">≥25% enhancing tissue or macroscopic fat</button><br>
-          <br><button onclick="showUmri()">Unenhanced MRI</button><br>
-        </div>
-
-        <div id="etomfe" class="question" style="display:none;">
-          <p id="black">Solid mass <br> <span id="nonbold">Bosniak classification not applicable</span></p>
-        </div>
-
-        <div id="Umri" class="question" style="display:none;">
-          <p>Homogeneous and T2w similar to CSF <br> -or- <br> Homogeneous and T1w fat sat SI ≥22.5x kidney</p>
-          <button onclick="showYessidea2()">Yes</button><br>
-          <br><button onclick="showNosidea2()">No</button><br>
-        </div>
-
-        <div id="yessidea2" class="question" style="display:none;">
-          <p>Bosniak II <br> <span id="nonbold">No follow-up</span></p>
-        </div>
-
-        <div id="nosidea2" class="question" style="display:none;">
-          <p>Not classified <br> <span id="nonbold">Renal mass CT or MRI recommended</span></p>
-        </div>
-
-        <!--Yes side-->
-
-        <div id="yessidea1" class="question" style="display:none;">
-          <p>Nodule(s) Convex obtuse margin: ≥4 mm Convex acute margin: Any size</p>
-          <button onclick="showYessidea3()">Yes</button><br>
-          <br><button onclick="showNosidea3()">No</button><br>
-        </div>
-
-        <div id="yessidea3" class="question" style="display:none;">
-          <p id="">Bosniak IV <br> <span id="nonbold">Urology consult</span></p>
-        </div>
-
-        <div id="nosidea3" class="question" style="display:none;">
-          <p>Irregular or thick walls or septa Thick: ≥4 mm Convex obtuse margin: ≤3 mm</p>
-          <button onclick="showYessidea4()">Yes</button><br>
-          <br><button onclick="showNosidea4()">No</button><br>
-        </div>
-
-        <div id="yessidea4" class="question" style="display:none;">
-          <p id="">Bosniak III <br> <span id="nonbold">Urology consult</span></p>
-        </div>
-
-        <div id="nosidea4" class="question" style="display:none;">
-          <p>Minimally thick walls or septa Minimally thick: 3 mm -and/or- Many smooth thin septa Many: ≥4, Thin: ≤2 mm</p>
-          <button onclick="showYessidea5()">Yes</button><br>
-          <br><button onclick="showNosidea5()">No</button><br>
-        </div>
-
-        <div id="yessidea5" class="question" style="display:none;">
-          <p id="">Bosniak IIF <br> <span id="nonbold">Reimage qбmo x 2 then q1yr x 4 for a total of 5 yrs</span></p>
-        </div>
-
-        <div id="nosidea5" class="question" style="display:none;">
-          <p>Nonenhancing and heterogeneously hyperintense at T1w fat sat</p>
-          <button onclick="showYessidea6()">Yes</button><br>
-          <br><button onclick="showNosidea6()">No</button><br>
-        </div>
-
-        <div id="yessidea6" class="question" style="display:none;">
-          <p id="">Bosniak IIF <br> <span id="nonbold">Reimage qбmo x 2 then q1yr x 4 for a total of 5 yrs</span></p>
-        </div>
-
-        <div id="nosidea6" class="question" style="display:none;">
-          <p>Few thin septa Few: ≤3, Thin: ≤2 mm -or- Homogeneous nonenhancing hyperintense at T1W fat sat</p>
-          <button onclick="showYessidea7()">Yes</button><br>
-          <br><button onclick="showNosidea7()">No</button><br>
-        </div>
-
-        <div id="yessidea7" class="question" style="display:none;">
-          <p id="">Bosniak II <br> <span id="nonbold">No follow-up</span></p>
-        </div>
-
-        <div id="nosidea7" class="question" style="display:none;">
-          <p>Simple cyst Thin smooth wall Homogeneous Simple fluid (like CSF) No septa or calcifications</p>
-          <button onclick="showYessidea8()">Yes</button><br>
-        </div>
-
-        <div id="yessidea8" class="question" style="display:none;">
-          <p id="">Bosniak I <br> <span id="nonbold">No follow-up</span></p>
-        </div>
-
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
